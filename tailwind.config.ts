@@ -17,41 +17,30 @@ module.exports = {
         },
         extend: {
             colors: {
-                "blue-main": "#3772FF",
-                "black-main": "#080708",
-                "white-main": "#F4F4F8",
-                border: "hsl(var(--border))",
-                input: "hsl(var(--input))",
-                ring: "hsl(var(--ring))",
-                background: "hsl(var(--background))",
-                foreground: "hsl(var(--foreground))",
+                bgc: "rgba(var(--color-background), <alpha-value>)",
+                fgc: "rgba(var(--color-foreground), <alpha-value>)",
+                content: "rgba(var(--color-content), <alpha-value>)",
                 primary: {
-                    DEFAULT: "hsl(var(--primary))",
-                    foreground: "hsl(var(--primary-foreground))"
+                    DEFAULT: "rgba(var(--color-primary), <alpha-value>)",
+                    foreground:
+                        "rgba(var(--color-primary-foreground), <alpha-value>)"
                 },
                 secondary: {
-                    DEFAULT: "hsl(var(--secondary))",
-                    foreground: "hsl(var(--secondary-foreground))"
-                },
-                destructive: {
-                    DEFAULT: "hsl(var(--destructive))",
-                    foreground: "hsl(var(--destructive-foreground))"
-                },
-                muted: {
-                    DEFAULT: "hsl(var(--muted))",
-                    foreground: "hsl(var(--muted-foreground))"
+                    DEFAULT: "rgba(var(--color-secondary), <alpha-value>)",
+                    foreground:
+                        "rgba(var(--color-secondary-foreground), <alpha-value>)"
                 },
                 accent: {
-                    DEFAULT: "hsl(var(--accent))",
-                    foreground: "hsl(var(--accent-foreground))"
+                    1: "rgba(var(--color-accent-main), <alpha-value>)",
+                    2: "rgba(var(--color-accent-alt), <alpha-value>)",
+                    like: "rgba(var(--color-accent-like), <alpha-value>)",
+                    Com: "rgba(var(--color-accent-com), <alpha-value>)"
                 },
-                popover: {
-                    DEFAULT: "hsl(var(--popover))",
-                    foreground: "hsl(var(--popover-foreground))"
-                },
-                card: {
-                    DEFAULT: "hsl(var(--card))",
-                    foreground: "hsl(var(--card-foreground))"
+                message: {
+                    info: "rgba(var(--color-info), <alpha-value>)",
+                    error: "rgba(var(--color-error), <alpha-value>)",
+                    warning: "rgba(var(--color-warning), <alpha-value>)",
+                    success: "rgba(var(--color-success), <alpha-value>)"
                 }
             },
             borderRadius: {
@@ -72,8 +61,14 @@ module.exports = {
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out"
+            },
+            boxShadow: {
+                toast: "2px 2px 5px 0px rgba(0, 0, 0, 1)"
             }
         }
     },
-    plugins: [require("tailwindcss-animate")]
+    plugins: [
+        require("tailwindcss-animate"),
+        require("@tailwindcss/container-queries")
+    ]
 };
