@@ -55,6 +55,7 @@
         "tailwindcss-animate": "^1.0.7",
         "ts-jest": "^29.1.1",
         "typescript": "5.2.2",
-        "vercel": "^32.5.0"
+        "vercel": "^32.5.0",
+        "zod": "^3.22.4"
     }
 }
