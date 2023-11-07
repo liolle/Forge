@@ -1,0 +1,19 @@
+version: "3"
+services:
+    db:
+        image: postgres
+        container_name: postgresDb-template
+        restart: always
+
+        volumes:
+            - psql:/var/lib/postgresql/data
+
+        ports:
+            - 5432:5432
+
+        environment:
+            - POSTGRES_DB=postgress
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+volumes:
+    psql:
