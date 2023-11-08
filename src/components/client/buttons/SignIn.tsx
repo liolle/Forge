@@ -15,7 +15,7 @@ const SignInButton = () => {
 
         const response = await fetch("/api/auth/signin", {
             method: "POST",
-            body: JSON.stringify({ accessToken: token })
+            body: JSON.stringify({ idToken: token })
         });
 
         if (response.status != 200) return;
