@@ -10,6 +10,7 @@ export async function POST(request: NextRequest) {
     const body = (await request.json()) as LoginBody;
 
     if (!body.idToken) return NextResponse.json(baseResponse, { status: 401 });
+    console.log("BODY TOKEN OK");
 
     const response = NextResponse.json(baseResponse, { status: 200 });
     response.cookies.set({

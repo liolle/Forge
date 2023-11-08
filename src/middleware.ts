@@ -5,6 +5,8 @@ import { APIResponse } from "./types";
 export async function middleware(request: NextRequest) {
     const forge_cookie = request.cookies.get("Forge_cookie")?.value;
 
+    console.log("COOKIE", forge_cookie);
+
     if (!forge_cookie)
         return NextResponse.redirect(`${process.env.ORIGIN}/signin`);
 
@@ -20,6 +22,7 @@ export async function middleware(request: NextRequest) {
     if (response.status != 200)
         return NextResponse.redirect(`${process.env.ORIGIN}/signin`);
 
+    console.log("Valid Cookie");
     return NextResponse.next();
 }
 
