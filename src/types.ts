@@ -56,7 +56,7 @@ export type SQLInterfaceOptions = {
 };
 
 export type LoginBody = {
-    accessToken: string;
+    idToken: string;
 };
 
 //ERROR//
