@@ -1,13 +1,13 @@
 import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 
-const { privateKey } = JSON.parse(process.env.FIREBASE_PRIVATE_KEY || "");
+// const { privateKey } = JSON.parse(process.env.FIREBASE_PRIVATE_KEY || "");
 
 const firebaseAdminConfig = {
     credential: cert({
         projectId: process.env.FIREBASE_PROJECT_ID,
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: privateKey
+        privateKey: process.env.FIREBASE_PRIVATE_KEY
     })
 };
 
