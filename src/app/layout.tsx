@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: "Reusable project starter"
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children
 }: {
     children: React.ReactNode;

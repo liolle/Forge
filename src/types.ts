@@ -1,9 +1,38 @@
 /**
  * TYPES
  */
-import * as z from "zod";
 
 export const TEMPLATE_VERSION = "v0.0.8";
+
+export type FirebaseConfigType = {
+    apiKey: string;
+    authDomain: string;
+    projectId: string;
+    storageBucket: string;
+    messagingSenderId: string;
+    appId: string;
+    measurementId: string;
+};
+
+export type APIResponse = {
+    version: string;
+    self: string;
+    error?: {
+        error: string;
+        detail: string;
+    };
+    data?: {
+        type: string;
+        count: number;
+        content: {
+            actions: string[];
+            item: string[];
+        }[];
+    };
+    rel?: {
+        pagination: string;
+    };
+};
 
 //-->Entity
 export type UserType = {
@@ -26,15 +55,9 @@ export type SQLInterfaceOptions = {
     mockValue: UserType[] | null;
 };
 
-//ZOD//
-
-export const EmailRegistration = z.object({
-    email: z.string().email()
-});
-
-export const EmailValidation = z.object({
-    code: z.string().min(1, "Input needed")
-});
+export type LoginBody = {
+    idToken: string;
+};
 
 //ERROR//
 
