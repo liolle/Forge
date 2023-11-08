@@ -19,6 +19,7 @@ const SignInButton = () => {
         });
 
         if (response.status != 200) return;
+        console.log("Status OK");
 
         router.push("/home");
     };

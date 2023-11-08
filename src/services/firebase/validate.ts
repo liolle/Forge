@@ -10,7 +10,7 @@ export const validateToken = async ({
     if (!idToken) return false;
 
     try {
-        await authAdmin.verifyIdToken(idToken);
+        console.log("Validate", await authAdmin.verifyIdToken(idToken));
         return true;
     } catch (error) {
         console.log(error);
